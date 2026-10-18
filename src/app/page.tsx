@@ -12,39 +12,42 @@ import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#F8FAFC] text-slate-900 overflow-hidden relative">
-      {/* 1. Header & Transparent Navbar */}
+    <>
+      {/* 1. Header & Fixed Navbar */}
       <Navbar />
 
-      {/* 2. Hero Section (100vh Full-Bleed Studio Photo + Hotspots) */}
-      <HeroSection />
+      {/* Main Content Sections */}
+      <main className="min-h-screen bg-[#F8FAFC] text-slate-900">
+        {/* 2. Hero Section (100vh Full-Bleed Studio Photo + Hotspots) */}
+        <HeroSection />
 
-      {/* 3. Dobra 2: Métricas & Autoridade Técnica */}
-      <MetricsBar />
+        {/* 3. Dobra 2: Métricas & Autoridade Técnica */}
+        <MetricsBar />
 
-      {/* 4. Dobra 3: A Metodologia Luna Pilates (Pilares) */}
-      <MethodologySection />
+        {/* 4. Dobra 3: A Metodologia Luna Pilates (Pilares) */}
+        <MethodologySection />
 
-      {/* 5. Dobra 4: Quem Conduz Seus Movimentos (Luciana Mayer) */}
-      <LucianaMayerSection />
+        {/* 5. Dobra 4: Quem Conduz Seus Movimentos (Luciana Mayer) */}
+        <LucianaMayerSection />
 
-      {/* 6. Dobra 5: Galeria do Studio Real */}
-      <GallerySection />
+        {/* 6. Dobra 5: Galeria do Studio Real */}
+        <GallerySection />
 
-      {/* 7. Dobra 6: Prova Social (26 Avaliações Google Maps + Botão Oficial) */}
-      <SocialProofSection />
+        {/* 7. Dobra 6: Prova Social (26 Avaliações Google Maps + Botão Oficial) */}
+        <SocialProofSection />
 
-      {/* 8. Dobra 7: Localização & Grade de Horários */}
-      <LocationScheduleSection />
+        {/* 8. Dobra 7: Localização & Grade de Horários */}
+        <LocationScheduleSection />
 
-      {/* 9. Perguntas Frequentes & Dúvidas */}
-      <FAQSection />
+        {/* 9. Perguntas Frequentes & Dúvidas */}
+        <FAQSection />
 
-      {/* 10. Rodapé Minimalista */}
-      <Footer />
+        {/* 10. Rodapé Minimalista */}
+        <Footer />
+      </main>
 
       {/* 11. Botão Flutuante de Conversão WhatsApp */}
       <FloatingWhatsApp />
-    </main>
+    </>
   );
 }

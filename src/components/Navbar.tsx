@@ -12,7 +12,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 60) {
+      if (window.scrollY > 40) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -35,40 +35,41 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'glass-nav-scrolled py-3 shadow-sm'
-          : 'bg-transparent py-5 border-b border-white/10'
+          ? 'glass-nav-scrolled py-2.5 shadow-sm'
+          : 'bg-slate-950/60 backdrop-blur-md py-3.5 border-b border-white/10'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
+          
           {/* Logo & Brand */}
           <Link
             href="#"
-            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-sky-500 rounded-lg p-1"
+            className="flex items-center gap-3 group focus:outline-none rounded-lg"
           >
-            <div className="relative w-10 h-10 rounded-full bg-white/90 p-1 shadow-sm flex items-center justify-center border border-sky-100 overflow-hidden">
+            <div className="relative w-9 h-9 rounded-full bg-white p-1 shadow-sm flex items-center justify-center border border-sky-100 overflow-hidden shrink-0">
               <Image
                 src="/assets/luna/logo.png"
                 alt="Studio Luna Pilates Logo"
-                width={36}
-                height={36}
+                width={32}
+                height={32}
                 className="object-contain"
                 priority
               />
             </div>
             <div className="flex flex-col">
               <span
-                className={`font-semibold tracking-[0.2em] text-lg transition-colors duration-300 ${
+                className={`font-semibold tracking-[0.18em] text-base leading-tight transition-colors duration-200 ${
                   isScrolled ? 'text-slate-900' : 'text-white'
                 }`}
               >
                 LUNA <span className="font-light">PILATES</span>
               </span>
               <span
-                className={`text-[10px] tracking-widest uppercase font-medium transition-colors duration-300 ${
-                  isScrolled ? 'text-sky-700' : 'text-sky-200'
+                className={`text-[9px] tracking-widest uppercase font-medium transition-colors duration-200 ${
+                  isScrolled ? 'text-sky-700' : 'text-sky-300'
                 }`}
               >
                 Studio & Fisioterapia
@@ -77,13 +78,13 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav Items */}
-          <nav className="hidden lg:flex items-center gap-7">
+          <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className={`text-sm font-medium tracking-wide transition-colors duration-200 hover:text-sky-500 ${
-                  isScrolled ? 'text-slate-700' : 'text-white/90 drop-shadow-sm'
+                className={`text-xs uppercase font-semibold tracking-wider transition-colors duration-200 hover:text-sky-400 ${
+                  isScrolled ? 'text-slate-700' : 'text-slate-200'
                 }`}
               >
                 {link.label}
@@ -97,10 +98,10 @@ export default function Navbar() {
               href={LUNA_INFO.whatsappHeroUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-95 ${
+              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-95 ${
                 isScrolled
                   ? 'bg-sky-600 hover:bg-sky-700 text-white'
-                  : 'bg-white/90 hover:bg-white text-slate-900 backdrop-blur-md border border-white/50'
+                  : 'bg-white/95 hover:bg-white text-slate-900 backdrop-blur-md border border-white/30'
               }`}
             >
               <MessageCircle className="w-3.5 h-3.5 text-emerald-500" />
